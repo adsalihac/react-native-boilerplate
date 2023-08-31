@@ -1,7 +1,7 @@
 {
   "package-name": "@adsalihac/react-native-boilerplate",
   "name": "@adsalihac/react-native-boilerplate",
-  "version": "1.0.4",
+  "version": "1.0.0",
   "description": "React Native Boilerplate",
   "repository": {
     "type": "git",
@@ -11,6 +11,9 @@
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/adsalihac/react-native-boilerplate/issues"
+  },
+  "publishConfig": {
+    "@adsalihac:registry": "https://npm.pkg.github.com"
   },
   "homepage": "https://adsalihac.github.io/react-native-boilerplate/",
   "main": "post-init-script.js",
