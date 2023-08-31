@@ -1,0 +1,14 @@
+# Unit Testing
+
+The project uses jest for unit testing and enforces a 100% coverage threshold.
+
+When adding a new component, it is essential to add comprehensive tests
+including, but not limited to, snapshot testing.
+
+Many libraries do not work well with unit tests and must have mocks to test the
+functionality surrounding them. Mocks reside in the `__mocks__` directory or are
+implemented using `jest.mock` for mocking on a per-test basis.
+
+Snapshot testing does not cover every aspect but is a good foundation. When
+snapshots change, be sure to inspect them before updating them using
+`npm test -- -u`.

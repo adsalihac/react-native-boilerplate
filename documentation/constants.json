@@ -1,0 +1,31 @@
+{
+  "flipperVersion": "0.164.0",
+  "reactNativeVersion": "0.71.4",
+  "boilerplateVersion": "1.0.0",
+  "organizationName": "adsalihac",
+  "projectName": "react-native-boilerplate",
+  "githubUrl": "https://github.com/adsalihac/react-native-boilerplate",
+  "githubDiscussion": "https://github.com/adsalihac/react-native-boilerplate/discussions",
+  "githubContributorsUrl": "https://github.com/adsalihac/react-native-boilerplate/graphs/contributors",
+  "npmUrl": "https://www.npmjs.com/package/@adsalihac/react-native-boilerplate",
+  "editDocsUrl": "https://github.com/adsalihac/react-native-boilerplate/edit/main/documentation",
+  "editBlogUrl": "https://github.com/adsalihac/react-native-boilerplate/tree/main/documentation/blog",
+  "showCase": [
+    {
+      "name": "Test 1 ",
+      "description": "",
+      "icon": "logo.png",
+      "appStore": "",
+      "playStore": "https://play.google.com/store/apps/details?id=com.test.app",
+      "website": "http://www.test.com"
+    },
+    {
+      "name": "Test 2 ",
+      "description": "",
+      "icon": "logo.png",
+      "appStore": "https://play.google.com/store/apps/details?id=com.test.app",
+      "playStore": "https://play.google.com/store/apps/details?id=com.test.app",
+      "website": "http://www.test.com"
+    }
+  ]
+}

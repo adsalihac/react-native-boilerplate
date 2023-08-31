@@ -1,0 +1,145 @@
+---
+description: React native boilerplate introduction and features.
+slug: /
+---
+
+import constants from "../constants.json";
+
+# Introduction
+
+⚡️ React Native boilerplate provides a starting point for developing a new [React Native](https://reactnative.dev/) application, with a predefined structure, configuration, and dependencies .
+
+💥 Provide a solid foundation for building your application, while also being flexible enough to allow for customization and additional features as needed.
+
+🌩️ We provide pre-defined file structure that includes directories for source code, assets, tests, and configurations.
+
+🏗️ We are excited to invite you to contribute to our React Native boilerplate. We believe that collaboration is key to building great software, So come join us and let's build something awesome together!
+
+## Features {#features}
+
+🤖 Following features are our milestones:
+
+#### Basics
+
+💪 Boilerplate completely follows `Typescript` and `Javascript`.
+
+🤖 Guidelines basically setup for Android, iOS and Web development in React Native.
+
+📦 This Boilerplate will help you to understand and learn powerful tools that offer several benefits. Prettier and ESLint can be used in a wide variety of scenarios to improve code quality, consistency, and productivity, and are valuable tools for any development team
+
+🧪 Example
+
+    Error messages: If ESLint detects an error, it will provide a descriptive error message indicating what went wrong and where.
+    Warnings: ESLint can also provide warnings for code that is not necessarily an error, but may be problematic or non-standard.
+    Auto-fixing: Many ESLint rules can be automatically fixed by running the eslint --fix command, which will update your code to conform to the specified rules.
+
+🛠️ You can develop multiple app/brands in a single codebase.
+
+Example :-
+
+    If a development team planning to develop `foodApp`. Basic development need 3 apps
+    (FoodApp UserApp , Delivery App and Shop Admin App).
+    So in this codebase we can develop all system in a single codebase. using `Android favors` and `iOS schemes`.
+
+🎬 build multiple release like `development` , `production` and `live`.
+
+🔆 Support `Dark Mode`.
+
+🧰 `Fonts Family (Poppins)` Support. You can just change new fonts
+`app/assets/fonts` and change fonts name in `app/styles/fonts` and run this
+script `npx react-native-asset`.
+
+🛀 We can access other file directly. Old code system we use
+`import { fontSize, fontStyle } from '../../styles/fonts'` , but this project
+we can use file path directly
+`import { fontSize, fontStyle } from 'app/styles/fonts'` , So we don't think
+about path issue.
+
+- `Context` added.
+- `Hermes` enabled for reduce app size and improve app performance.
+- `renovate` is added. it is automatically manage dependencies and automatically
+  check dependencies version weekly and create merge request is git.
+- Project `documentation` is added.
+- `Unit test` is added.
+- `Navigation` is configured.
+- Major feature is `we cant push to git` code without manage
+  `eslint coding style`. So it can improve app performance. we can
+  `reduce code review time` for code structure and `improve code quality`.
+- `vscode` extension and vscode settings is added. based on this project.
+- `unwanted packages` and `files` are managed. we can identify which one is not
+  used.
+- `npm i` to install all `node modules` , `pod` install and check android
+  `jetifier`.
+- `Multiple Language` Support. `app/translations/locales` add/remove languages
+  typescript files. `app/translations/index.ts` declare languages path. and
+  Language UI is existing this project.`app/screens/common/language/index.tsx`.
+  Just change UI Only.
+
+#### React Native Packages
+
+- [Reanimated 3.0](https://blog.swmansion.com/releasing-reanimated-3-0-17fab4cb2394)
+  Supported.
+- [FastImage](https://github.com/DylanVann/react-native-fast-image) Package is
+  added.
+- [Async Storage](https://react-native-async-storage.github.io/async-storage/docs/install/)
+  is added.
+- React native [SVG](https://www.npmjs.com/package/react-native-svg) support.
+- [lottie](https://www.npmjs.com/package/lottie-react-native) animation support.
+- [Redux toolkit](https://redux-toolkit.js.org/) support.
+- Native Fils system access.
+  [react native fs](https://www.npmjs.com/package/react-native-fs) added.
+- [react-native-device-info](https://www.npmjs.com/package/react-native-device-info)
+  for device details.
+- [Vector Icon](https://www.npmjs.com/package/react-native-vector-icons) pack
+  added.
+- [patch-package](https://www.npmjs.com/package/patch-package) is added. you can
+  modify packages anytime with your choice.
+
+#### Android
+
+- Android `Screen portrait` is locked.
+
+#### iOS
+
+- iOS `Screen portrait` is locked.
+
+#### Debugger
+
+- `Flipper` configured. it is used to `debug app`. See [more](docs/developerTools/flipper)
+
+#### Security Features
+
+- This app is not working `rooted` and `jailbreak` devices.
+- `Android ProGuard` is enabled. ProGuard is an open source command-line tool
+  that shrinks, optimizes and obfuscates Java code.
+-
+
+#### Upcoming Features
+
+- Support `Desktop` App.
+- Improve new features in `Web` App.
+
+## Contributors
+
+<a href={constants.githubContributorsUrl}>
+  <img
+    src={
+      "https://contrib.rocks/image?repo=" +
+      constants.organizationName +
+      "/" +
+      constants.projectName
+    }
+  />
+</a>
+
+## Give a Star! {#give-a-star}
+
+If you liked this [boilerplate](https://github.com/adsalihac/react-native-boilerplate) , please give it a star ⭐ in github. Thanks in advance.
+
+<!---
+## Buy us a coffee for our hard work {#buy-us-a-coffee}
+
+<a href="https://www.buymeacoffee.com/adsalihac">
+  <img src="https://img.buymeacoffee.com/button-api/?text=Buy us a coffee&emoji=&slug=adsalihac&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
+</a>
+-->

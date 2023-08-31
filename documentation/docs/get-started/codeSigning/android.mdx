@@ -1,0 +1,23 @@
+On Android, we only need to sign the release and live builds of the app when
+producing builds for distribution via AppCenter or the Google Play Store.
+
+The Android signing configs are in `android/app/build.gradle` under
+`signingConfigs`.
+
+The release and live signing configs use the following variables configured in
+`~/.gradle/gradle.properties`:
+
+```properties
+RELEASE_STORE_FILE=release.keystore
+RELEASE_KEY_ALIAS=release
+RELEASE_STORE_PASSWORD=password
+RELEASE_KEY_PASSWORD=password
+
+LIVE_STORE_FILE=live.keystore
+LIVE_KEY_ALIAS=live
+LIVE_STORE_PASSWORD=password
+LIVE_KEY_PASSWORD=password
+```
+
+For more information about publishing Android apps, see the
+[React Native docs](https://reactnative.dev/docs/signed-apk-android).

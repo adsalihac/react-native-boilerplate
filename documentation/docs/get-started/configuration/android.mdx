@@ -1,0 +1,39 @@
+This is the documentation of android configuration.
+
+import Appname from "@site/src/components/Appname/Appname";
+import AppBrand from "@site/src/components/AppBrand/AppBrand";
+import Env from "@site/src/components/CodeBlock/Env";
+import App from "@site/src/components/CodeBlock/App";
+
+## Current Status
+
+- Current AppName is <Appname background={true} /> and application id is <Appname packageName={true} background={true} />
+- Also you can see <AppBrand background={true}/> is a brand name system.
+
+## Apk Build , App Start and Bundle
+
+Actually we implemented multiple script for start,build apk and bundle release
+in android. it can easy to multiple apk in different [environment](config.md).
+
+## Steps
+
+1. First goto `android/app/build.gradle`
+
+```bash
+flavorDimensions 'branding'
+productFlavors {
+    brand1 {
+        dimension 'branding'
+    }
+}
+```
+
+- You can replace above code.
+
+2 - Goto `app/navigators` , you can see the `brand1` folder , change the folder name to your brand name <AppBrand background={true}/>.
+
+3 - Goto `app/screens` , you can see the `brand1` folder , change the folder name to your brand name <AppBrand background={true}/>.
+
+4 - Open `app/app.tsx` , replace below lines with your brand name <AppBrand background={true}/> .
+
+<App />

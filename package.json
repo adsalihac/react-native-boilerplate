@@ -1,0 +1,43 @@
+{
+  "package-name": "@adsalihac/react-native-boilerplate",
+  "name": "@adsalihac/react-native-boilerplate",
+  "version": "1.0.4",
+  "description": "React Native Boilerplate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adsalihac/react-native-boilerplate.git"
+  },
+  "author": "adsalihac <adsalihac@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adsalihac/react-native-boilerplate/issues"
+  },
+  "homepage": "https://adsalihac.github.io/react-native-boilerplate/",
+  "main": "post-init-script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "commit": "cz"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "react-native"
+  ],
+  "dependencies": {
+    "kleur": "^4.1.4",
+    "prompts": "^2.4.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/cz-commitlint": "^17.0.0",
+    "@commitlint/prompt-cli": "^17.0.0",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  }
+}

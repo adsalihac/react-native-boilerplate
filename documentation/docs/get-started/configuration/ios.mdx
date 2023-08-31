@@ -1,0 +1,97 @@
+## Environment variable Configuration
+
+We use `react-native-config` for env, follow steps for configuration
+
+- Read variables declared in `.env` from your Obj-C classes like:
+
+```objc
+// import header
+#import "RNCConfig.h"
+
+// then read individual keys like:
+NSString *apiUrl = [RNCConfig envFor:@"API_URL"];
+
+// or just fetch the whole config
+NSDictionary *config = [RNCConfig env];
+```
+
+- With one extra step environment values can be exposed to `Info.plist` and Build settings in the native project.
+
+  - Click on the file tree and create new file of type XCConfig
+
+    ![Screenshot](/img/ios-config.png)
+
+    ![Screenshot](/img/ios-config-1.png)
+
+  - Save it under `ios` folder as `Config.xcconfig` with the following content:
+
+    ```objc
+    #include? "tmp.xcconfig"
+    ```
+
+  - Add the following to your `.gitignore`:
+
+    ```shell
+    # react-native-config codegen
+    ios/tmp.xcconfig
+    ```
+
+  - Apply config to your configurations
+
+    ![Screenshot](/img/ios-config-2.png)
+
+  - Go to Edit scheme... -> Build -> Pre-actions, click + and select New Run Script Action. Paste below code which will generate `tmp.xcconfig` before each build exposing values to Build Settings and `Info.plist`.
+
+    ```shell
+    exec > "${PROJECT_DIR}/pre-build.log" 2>&1
+    "${PROJECT_DIR}/build-scripts/pre-build.sh" "${ENVFILE}"
+    ```
+
+## Setup target for two or more brands
+
+- Create a New Group in Xcode and rename into your brand name (here we give name as Brand2)
+
+  ![Screenshot](/img/new-group.png)
+
+- Create the duplicate of your app & rename to your brand (here we give name as brand2)
+
+  ![Screenshot](/img/ios-config-3.png)
+
+- While duplicating you got `copy Info.plist` rename to `Info.plist` and move this into group that we created earlier (Try to copy paste don't drag and drop, it will move only the reference)
+
+- Make sure the `Info.plist` path is correct in build settings and run `pod install`
+
+  ![Screenshot](/img/ios-config-4.png)
+
+- Get app name from env by adding `$(RN_APP_NAME)` in bundle display name
+
+  ![Screenshot](/img/ios-config-5.png)
+
+## To generate Xcode schemes for each environment.
+
+```shell
+npm run generate:schemes
+```
+
+- We using a template `config/template.xcscheme` to generate the scheme
+- You can customize the scheme by editing this file `scripts/generate-schemes.ts`
+- If you see `xcuserdata` folder in `ios/xcule.xcodeproj` you can remove it and also `IDEWorkspaceChecks.plist` from `ios/xcule.xcodeproj/project.xcworkspace/xcshareddata`
+- If you need only one target you can remove `brand2` from Xcode and from `scripts/generate-schemes.ts` then run `npm run generate:schemes` so it will generate scheme for one target.
+
+## Scripts to run different environment
+
+```shell
+npm run start:ios:brand1:dev
+```
+
+```shell
+npm run start:ios:brand1:prod
+```
+
+```shell
+npm run start:ios:brand2:dev
+```
+
+```shell
+npm run start:ios:brand2:prod
+```

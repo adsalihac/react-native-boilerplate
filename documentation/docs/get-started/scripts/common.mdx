@@ -1,0 +1,46 @@
+# Other basic Scripts
+
+## `npm i`
+
+Install node modules, pod files , update pod repo and check androidX jetifier.
+
+## `npm start`
+
+Run the React Native packager in dev mode. It is required to run the app using
+any of the commands below.
+
+Sometimes you may need to reset or clear the React Native packager's cache. To
+do so you can pass the `--reset-cache` flag to the start script:
+
+```sh
+npm start -- --reset-cache
+```
+
+### `npm test`
+
+Run the [jest](https://github.com/facebook/jest) test runner.
+
+### `npm check-types`
+
+Run the [typescript](https://www.typescriptlang.org/) type checker.
+
+### `npm run lint`
+
+Run the [eslint](https://github.com/eslint/eslint) linter.
+
+### `npm run format`
+
+Run the [prettier](https://prettier.io/) Prettier.
+
+### `npm run install:npm`
+
+Install the correct npm version using the `engines` field from `package.json`.
+
+### `npm run release`
+
+Start an app release from a release branch (see [Contributing](contributing.md)
+guidelines).
+
+### `npm audit fix --force`
+
+Fix vulnerabilities.
