@@ -22,6 +22,9 @@ jobs:
         # Install all deps from package-lock.json
         run: npm install --frozen-lockfile
         working-directory: ./documentation
+      - name: Clear build
+        working-directory: ./documentation
+        run: npm run clear
       - name: Build website
         working-directory: ./documentation
         run: npm run build

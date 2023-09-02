@@ -61,6 +61,25 @@ const config = {
   organizationName: constants.organizationName, // Usually your GitHub org/user name.
   projectName: constants.projectName, // Usually your repo name.
 
+  deploymentBranch: 'gh-pages',
+
+  githubHost: 'github.com',
+
+  staticDirectories: ['static'],
+
+  markdown: {
+    format: 'mdx',
+    mermaid: true,
+    preprocessor: ({filePath, fileContent}) => {
+      return fileContent.replaceAll('{{MY_VAR}}', 'MY_VALUE');
+    },
+    mdx1Compat: {
+      comments: true,
+      admonitions: true,
+      headingIds: true,
+    },
+  },
+
   webpack: {
     jsLoader: (isServer) => ({
       loader: require.resolve("swc-loader"),
