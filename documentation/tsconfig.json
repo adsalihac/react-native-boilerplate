@@ -5,9 +5,6 @@
     "lib": ["DOM", "ESNext"],
     "baseUrl": ".",
     "resolveJsonModule": true,
-    "paths": {
-      "@site/*": ["./documentation/src/*"],
-    },
 
     // Duplicated from the root config, because TS does not support extending
     // multiple configs and we want to dogfood the @tsconfig/docusaurus one
