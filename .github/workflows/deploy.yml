@@ -19,12 +19,12 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        # Install all deps from yarn.lock
+        # Install all deps from package-lock.json
         run: npm install --frozen-lockfile
         working-directory: ./documentation
       - name: Build website
         working-directory: ./documentation
-        run: npm build
+        run: npm run build
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
