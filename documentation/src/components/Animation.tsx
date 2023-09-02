@@ -21,5 +21,5 @@ export default function Animation({
     // },
   };
 
-  return <Lottie animationData={defaultOptions} height={240} width={"75%"} />;
+  return <Lottie animationData={animationFile} height={240} width={"75%"} />;
 }
