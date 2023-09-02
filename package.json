@@ -15,7 +15,7 @@
   "publishConfig": {
     "@adsalihac:registry": "https://npm.pkg.github.com"
   },
-  "homepage": "https://adsalihac.github.io/react-native-boilerplate/",
+  "homepage": "https://react-native-boilerplate-50wvtdc35-adsalihac.vercel.app/",
   "main": "post-init-script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

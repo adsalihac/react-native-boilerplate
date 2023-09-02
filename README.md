@@ -21,7 +21,7 @@ npx react-native init MyApp --template @adsalihac/react-native-boilerplate
 
 ## Documentation
 
-To learn more about this boilerplate, go to [full documentation](https://adsalihac.github.io/react-native-boilerplate)
+To learn more about this boilerplate, go to [full documentation](https://react-native-boilerplate-50wvtdc35-adsalihac.vercel.app/)
 
 ## License
 
