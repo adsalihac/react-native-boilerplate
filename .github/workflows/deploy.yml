@@ -16,17 +16,15 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           # node-version: 17 # Use the latest Node.js version
-          cache: yarn
+          cache: npm
 
-      - name: ci dependencies
-        run: yarn add codecov --frozen-lockfile
       - name: Install dependencies
         # Install all deps from yarn.lock
-        run: yarn install --frozen-lockfile
+        run: npm install --frozen-lockfile
         working-directory: ./documentation
       - name: Build website
         working-directory: ./documentation
-        run: yarn build
+        run: npm build
 
       # Popular action to deploy to GitHub Pages:
       # Docs: https://github.com/peaceiris/actions-gh-pages#%EF%B8%8F-docusaurus
