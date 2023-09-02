@@ -6,7 +6,7 @@
     "baseUrl": ".",
     "resolveJsonModule": true,
     "paths": {
-      "@site/*": ["./*"]
+      "@site/*": ["./documentation/src/*"],
     },
 
     // Duplicated from the root config, because TS does not support extending

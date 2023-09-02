@@ -48,7 +48,9 @@ const config = {
 
   // Set the production url of your site here
   url: "https://adsalihac.github.io",
-  trailingSlash: isDeployPreview,
+  // trailingSlash: isDeployPreview,
+  trailingSlash: false,
+
 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
