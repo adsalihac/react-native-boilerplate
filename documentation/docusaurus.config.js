@@ -61,23 +61,23 @@ const config = {
   organizationName: constants.organizationName, // Usually your GitHub org/user name.
   projectName: constants.projectName, // Usually your repo name.
 
-  // webpack: {
-  //   jsLoader: (isServer) => ({
-  //     loader: require.resolve("swc-loader"),
-  //     options: {
-  //       jsc: {
-  //         parser: {
-  //           syntax: "typescript",
-  //           tsx: true,
-  //         },
-  //         target: "es2017",
-  //       },
-  //       module: {
-  //         type: isServer ? "commonjs" : "es6",
-  //       },
-  //     },
-  //   }),
-  // },
+  webpack: {
+    jsLoader: (isServer) => ({
+      loader: require.resolve("swc-loader"),
+      options: {
+        jsc: {
+          parser: {
+            syntax: "typescript",
+            tsx: true,
+          },
+          target: "es2017",
+        },
+        module: {
+          type: isServer ? "commonjs" : "es6",
+        },
+      },
+    }),
+  },
 
   markdown: {
     mermaid: true,
@@ -93,67 +93,67 @@ const config = {
   //   locales: ["en"],
   // },
 
-  // plugins: [
-  //   [
-  //     "pwa",
-  //     {
-  //       debug: isDeployPreview,
-  //       offlineModeActivationStrategies: [
-  //         "appInstalled",
-  //         "standalone",
-  //         "queryString",
-  //       ],
-  //       pwaHead: [
-  //         {
-  //           tagName: "link",
-  //           rel: "icon",
-  //           href: "img/logo.png",
-  //         },
-  //         {
-  //           tagName: "link",
-  //           rel: "manifest",
-  //           href: "manifest.json",
-  //         },
-  //         {
-  //           tagName: "meta",
-  //           name: "theme-color",
-  //           content: "rgb(37, 194, 160)",
-  //         },
-  //         {
-  //           tagName: "meta",
-  //           name: "apple-mobile-web-app-capable",
-  //           content: "yes",
-  //         },
-  //         {
-  //           tagName: "meta",
-  //           name: "apple-mobile-web-app-status-bar-style",
-  //           content: "#000",
-  //         },
-  //         {
-  //           tagName: "link",
-  //           rel: "apple-touch-icon",
-  //           href: "img/logo.png",
-  //         },
-  //         {
-  //           tagName: "link",
-  //           rel: "mask-icon",
-  //           href: "img/logo.png",
-  //           color: "rgb(62, 204, 94)",
-  //         },
-  //         {
-  //           tagName: "meta",
-  //           name: "msapplication-TileImage",
-  //           content: "img/logo.png",
-  //         },
-  //         {
-  //           tagName: "meta",
-  //           name: "msapplication-TileColor",
-  //           content: "#000",
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // ],
+  plugins: [
+    [
+      "pwa",
+      {
+        debug: isDeployPreview,
+        offlineModeActivationStrategies: [
+          "appInstalled",
+          "standalone",
+          "queryString",
+        ],
+        pwaHead: [
+          {
+            tagName: "link",
+            rel: "icon",
+            href: "img/logo.png",
+          },
+          {
+            tagName: "link",
+            rel: "manifest",
+            href: "manifest.json",
+          },
+          {
+            tagName: "meta",
+            name: "theme-color",
+            content: "rgb(37, 194, 160)",
+          },
+          {
+            tagName: "meta",
+            name: "apple-mobile-web-app-capable",
+            content: "yes",
+          },
+          {
+            tagName: "meta",
+            name: "apple-mobile-web-app-status-bar-style",
+            content: "#000",
+          },
+          {
+            tagName: "link",
+            rel: "apple-touch-icon",
+            href: "img/logo.png",
+          },
+          {
+            tagName: "link",
+            rel: "mask-icon",
+            href: "img/logo.png",
+            color: "rgb(62, 204, 94)",
+          },
+          {
+            tagName: "meta",
+            name: "msapplication-TileImage",
+            content: "img/logo.png",
+          },
+          {
+            tagName: "meta",
+            name: "msapplication-TileColor",
+            content: "#000",
+          },
+        ],
+      },
+    ],
+  ],
 
   presets: [
     [
