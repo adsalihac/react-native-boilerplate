@@ -1,5 +1,5 @@
 import React from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 
 export default function Animation({
   animation,
@@ -21,5 +21,5 @@ export default function Animation({
     // },
   };
 
-  return <Lottie options={defaultOptions} height={240} width={"75%"} />;
+  return <Lottie animationData={defaultOptions} height={240} width={"75%"} />;
 }
