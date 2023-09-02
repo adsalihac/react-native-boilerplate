@@ -1,5 +1,5 @@
 import React from "react";
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 
 export default function Animation({
   animation,
@@ -21,5 +21,7 @@ export default function Animation({
     // },
   };
 
-  return <Lottie animationData={animationFile} height={240} width={"75%"} />;
+  // return <Lottie animationData={animationFile} height={240} width={"75%"} />;
+  return <span>Comming Soon</span>;
+
 }
