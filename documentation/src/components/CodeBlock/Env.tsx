@@ -4,7 +4,7 @@ import {
   useVersions,
 } from "@docusaurus/plugin-content-docs/client";
 import CodeBlock from "@theme/CodeBlock";
-import AppName from "../Appname/AppName";
+import AppName from "../AppName/AppName";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
 export default function NpmInstall(): JSX.Element {

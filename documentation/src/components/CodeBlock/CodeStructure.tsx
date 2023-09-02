@@ -2,7 +2,7 @@ import React from "react";
 import CodeBlock from "@theme/CodeBlock";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
-import AppName from "../Appname/AppName";
+import AppName from "../AppName/AppName";
 
 export default function CodeStructure(): JSX.Element {
   const getLocalStorage = () => {
