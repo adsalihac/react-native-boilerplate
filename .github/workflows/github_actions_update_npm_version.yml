@@ -1,0 +1,103 @@
+# ******************************************************************
+# To create an NPM package release PR, run this workflow from the GitHub UI and
+# select parameters based on the type of release:
+#
+# - Major Update
+#   Select "Branch: main"
+#   Set `true` if there are breaking changes affecting sdk's across platforms i.e. react-native, android, ios etc.
+#
+# - Minor Update
+#   Select "Branch: main"
+#   Set `true` if there are multiple minor changes affecting sdk's across platforms i.e. react-native, android, ios etc.
+#
+# - Patch Update
+#   Select "Branch: main"
+#   Set `true` if the change affects only the react-native platform.
+# ******************************************************************
+
+name: Create version update release PR
+
+on:
+  workflow_dispatch:
+    inputs:
+      version_update:
+        description: >
+          Choose the type of version update:
+          ** major: Cross platform breaking changes
+          ** minor: Cross platform minor changes
+          ** patch: Changes affecting only this platform
+        required: true
+        default: 'patch'
+        type: choice
+        options: ['major','minor','patch']
+
+permissions:
+    pull-requests: write
+    contents: write
+    issues: write
+
+jobs:
+  update_version:
+    name: Update package version
+    runs-on: ubuntu-latest
+    steps:
+      - name: Determine update type
+        run: |
+          echo "RELEASE_TYPE=${{ inputs.version_update}}" >> $GITHUB_ENV
+
+      - name: Main branch checkout
+        uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update version
+        run: |
+          git config --global user.email adsalihac@gmail.com
+          git config --global user.name adsalihac
+          npm version ${{ env.RELEASE_TYPE }}
+
+      - name: Read package version
+        run: |
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          echo "PACKAGE_VERSION=${PACKAGE_VERSION}" >> $GITHUB_ENV
+          echo "BRANCH_NAME=releases/${PACKAGE_VERSION}_version_update" >> $GITHUB_ENV
+
+      - name: Commit version update
+        run: |
+          package_version=${{ env.PACKAGE_VERSION }}
+          git config --global user.email adsalihac@gmail.com
+          git config --global user.name adsalihac
+          git checkout -b ${{ env.BRANCH_NAME }}
+          git status
+          set +e
+          git add package.json
+          git add package-lock.json
+          git commit -m "Update React native SDK to ${package_version}"
+          git tag "v${package_version}"
+          git push --set-upstream origin ${{ env.BRANCH_NAME }}
+          set -e
+
+      - name: Create Pull Request
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const title = 'Update To Version: ${{ env.PACKAGE_VERSION }}';
+            const body = 'Once merged, this PR will trigger an action to release version: ${{ env.PACKAGE_VERSION }}';
+            const headBranch = '${{ env.BRANCH_NAME }}';
+            const baseBranch = 'main';
+
+            const createPullRequest = async () => {
+              const response = await github.rest.pulls.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title: title,
+                body: body,
+                head: headBranch,
+                base: baseBranch
+              });
+              console.log(`Pull request ${response.data.number} created`);
+            };
+
+            createPullRequest();
+
