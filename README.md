@@ -6,6 +6,7 @@
 ![NPM Downloads](https://img.shields.io/npm/dw/@adsalihac/react-native-boilerplate)
 ![Version](https://flat.badgen.net/npm/v/@adsalihac/react-native-boilerplate)
 ![Release Date](https://img.shields.io/github/release-date/adsalihac/react-native-boilerplate)
+[![Auto publish to npm registry once release PR is merged](https://github.com/adsalihac/react-native-boilerplate/actions/workflows/github_actions_release_npm_version.yml/badge.svg?branch=main)](https://github.com/adsalihac/react-native-boilerplate/actions/workflows/github_actions_release_npm_version.yml)
 
 # React Native boilerplate
 
