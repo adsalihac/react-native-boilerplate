@@ -1,0 +1,29 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: debian:bullseye
+    resource_class: small
+    steps:
+      - run:
+          name: Install Node
+          command: |
+            apt update
+            apt install -y wget git curl jq
+            curl -sL https://deb.nodesource.com/setup_18.x | bash -
+            apt install -y nodejs
+      - checkout
+      - run:
+          name: NPM Install
+          command: npm install
+      - sonarcloud/scan
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@1.0.3
+
+workflows:
+  main:
+    jobs:
+      - build:
+          context: SonarCloud
